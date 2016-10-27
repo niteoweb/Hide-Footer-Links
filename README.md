@@ -9,7 +9,9 @@ Remove Footer Links will try to remove all the footer links and copyright info f
 
 ## Description
 
-Remove Footer Links searches your theme for copyright info and site info that usually resides in the footer. It then tries to remove those elements or hides them. If a correct method for removing this info if found then a child theme is created and you can turn activate it.
+Remove Footer Links searches your theme for copyright info that you specified
+and removes it from your footer. This plugin will create a child theme that you
+have to activate in Themes menu.
 
 More info on <a href="http://blog.easyblognetworks.com/2015/free-remove-footer-linkx-plugin/">EBN blog</a>.
 
