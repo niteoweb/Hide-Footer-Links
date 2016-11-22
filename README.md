@@ -1,8 +1,7 @@
 # Remove Footer Links
 
-[![Build Status](https://travis-ci.org/niteoweb/footerlinks.svg?branch=master)](https://travis-ci.org/niteoweb/footerlinks)
-[![Coverage Status](https://coveralls.io/repos/niteoweb/footerlinks/badge.svg)](https://coveralls.io/r/niteoweb/footerlinks)
-
+[![Build Status](https://travis-ci.org/niteoweb/Remove-Footer-Links.svg?branch=master)](https://travis-ci.org/niteoweb/Remove-Footer-Links)
+[![Coverage Status](https://coveralls.io/repos/github/niteoweb/Remove-Footer-Links/badge.svg)](https://coveralls.io/github/niteoweb/Remove-Footer-Links)
 ## Info
 
 Remove Footer Links will try to remove all the footer links and copyright info from your theme.

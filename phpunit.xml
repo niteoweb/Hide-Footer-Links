@@ -19,5 +19,10 @@
         <blacklist>
             <directory>./vendor/</directory>
         </blacklist>
+
+        <whitelist>
+            <file>./src/index.php</file>
+        </whitelist>
+
     </filter>
 </phpunit>
