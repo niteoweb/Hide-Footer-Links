@@ -99,7 +99,7 @@ class TestFooterLinks extends TestCase
     public function test_customizeCSS()
     {
         \WP_Mock::wpFunction('get_option', array(
-                'return' => ['hide-selector'=>true, 'hide-enabled'=>true, 'use-important'=>true],
+                'return' => ['hide-selector'=>true, 'hide-enabled'=>true, 'use-important'=>false],
             )
         );
 
@@ -115,12 +115,38 @@ class TestFooterLinks extends TestCase
 
         $plugin = new FooterLinks;
         $plugin->customizeCSS();
+
+        $this->expectOutputRegex('/(.*)#site-generator(.*)/');
     }
+
+    public function test_customizeCSSImportantFlag()
+    {
+        \WP_Mock::wpFunction('get_option', array(
+                'return' => ['hide-selector'=>true, 'hide-enabled'=>true, 'use-important'=>true],
+            )
+        );
+
+        $wp_theme = \Mockery::mock();
+        $wp_theme->shouldReceive('get_template')
+            ->once()
+            ->andReturn('contango');
+        \WP_Mock::wpFunction('wp_get_theme', array(
+                'return' => $wp_theme,
+            )
+        );
+
+
+        $plugin = new FooterLinks;
+        $plugin->customizeCSS();
+
+        $this->expectOutputRegex('/(.*)\#colophon \.copyright(.*)!important(.*)/');
+    }
+
 
     public function test_customizeCSSNotFoundTheme()
     {
         \WP_Mock::wpFunction('get_option', array(
-                'return' => ['hide-selector'=>true, 'hide-enabled'=>true, 'use-important'=>true],
+                'return' => ['hide-selector'=>'.not-found-theme', 'hide-enabled'=>true, 'use-important'=>false],
             )
         );
 
@@ -136,6 +162,31 @@ class TestFooterLinks extends TestCase
 
         $plugin = new FooterLinks;
         $plugin->customizeCSS();
+
+        $this->expectOutputRegex('/(.*)\.not-found-theme(.*)/');
+    }
+
+    public function test_customizeCSSNotFoundThemeImportantFlag()
+    {
+        \WP_Mock::wpFunction('get_option', array(
+                'return' => ['hide-selector'=>'.not-found-theme', 'hide-enabled'=>true, 'use-important'=>true],
+            )
+        );
+
+        $wp_theme = \Mockery::mock();
+        $wp_theme->shouldReceive('get_template')
+            ->once()
+            ->andReturn('theme_does_not_exists');
+        \WP_Mock::wpFunction('wp_get_theme', array(
+                'return' => $wp_theme,
+            )
+        );
+
+
+        $plugin = new FooterLinks;
+        $plugin->customizeCSS();
+
+        $this->expectOutputRegex('/(.*)\.not-found-theme(.*)!important(.*)/');
     }
 
 }
