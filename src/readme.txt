@@ -1,26 +1,35 @@
-=== Remove Footer Links ===
+=== Hide Footer Links ===
 Contributors: niteoweb
 Tags: seo, copyright, secure
-Requires at least: 4.0
-Tested up to: 4.6
+Requires at least: 4.5
+Tested up to: 4.7
 Stable tag: 1.0.0
 
-Remove Footer Links will remove all the footer links and copyright info
-from your theme.
+Hide Footer Links will try to hide all footer links and copyright info from
+your theme. Hidden links do not pass link juice and can't be seen by
+visitors or bots.
+
 
 == Description ==
-Remove Footer Links searches your theme for copyright info that you specified
-and removes it from your footer. This plugin will create a child theme that you
-have to activate in Themes menu.
 
-= Plugin Features =
+Hide Footer Links tries to hide copyright portion of the footer. It will search
+your theme for copyright info and hide it. If it fails, you have the option
+to specify a CSS selector that can will be hidden.
 
-* Feature 1
-* Feature 2
-* Feature 3
 
-== Installation ==
+== Plugin Features ==
 
-1. Upload 'remove-footer-links' directory to the '/wp-content/plugins/' directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Go to **Tools** menu and then **Footer Links** to configure
+* Looks for copyright info and hides it
+* Offers an options to hide an arbitrary element with a CSS selector
+* Has WordPress Customizer support
+
+
+== Installation & Usage ==
+
+1. Upload 'hide-footer-links' directory to the '/wp-content/plugins/' directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Go to **Customizer** menu and then select **Footprint Settings**.
+4. Select **Enable hiding**.
+5. If your theme wasn't recognized enter a custom CSS selector.
+6. Click Save & Publish.
+
