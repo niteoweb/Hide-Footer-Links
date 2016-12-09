@@ -5,7 +5,7 @@ namespace Niteoweb\HideFooterLinks;
 /**
  * Plugin Name: Hide Footer Links
  * Description: Hide Footer Links will try to remove site info and copyright info from your footer.
- * Version:     1.0.1
+ * Version:     1.0.0
  * Runtime:     5.3+
  * Author:      Easy Blog Networks
  * Author URI:  www.easyblognetworks.com
@@ -131,7 +131,8 @@ class FooterLinks
         $wp_customize->add_section(
             'hfl_settings_section',
             array(
-                'title' => 'Footprint Settings',
+                'title' => __('Footprint Settings', 'hide-footer-links'),
+                'description' => __('Enables hiding of footer copyright info by searching your theme or giving you an option to specify a custom CSS selector.', 'hide-footer-links');
                 'priority' => 430,
             )
         );
@@ -166,7 +167,7 @@ class FooterLinks
         $wp_customize->add_control(
             'hfl_enable_hide_control',
             array(
-                'label' => 'Enable hiding',
+                'label' => __('Enable hiding', 'hide-footer-links'),
                 'type' => 'checkbox',
                 'section' => 'hfl_settings_section',
                 'settings' => 'hfl_options[hide-enabled]',
@@ -179,8 +180,8 @@ class FooterLinks
             $wp_customize->add_control(
                 'hfl_hide_css_control',
                 array(
-                    'label' => 'CSS selector to hide',
-                    'description' => 'CSS selector that contains copyright info.',
+                    'label' => __('CSS selector to hide', 'hide-footer-links'),
+                    'description' => __('CSS selector that contains copyright info.', 'hide-footer-links'),
                     'section' => 'hfl_settings_section',
                     'settings' => 'hfl_options[hide-selector]',
                     'type' => 'text',
@@ -189,8 +190,8 @@ class FooterLinks
             $wp_customize->add_control(
                 'hfl_use_important_control',
                 array(
-                    'label' => 'Use !important when hiding',
-                    'description' => 'Force hiding by using !important in CSS.',
+                    'label' => __('Use !important when hiding', 'hide-footer-links'),
+                    'description' => __('Force hiding by using !important in CSS.', 'hide-footer-link'),
                     'section' => 'hfl_settings_section',
                     'settings' => 'hfl_options[use-important]',
                     'type' => 'checkbox',

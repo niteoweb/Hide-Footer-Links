@@ -1,26 +1,30 @@
-# Remove Footer Links
+# Hide Footer Links
 
-[![Build Status](https://travis-ci.org/niteoweb/Remove-Footer-Links.svg?branch=master)](https://travis-ci.org/niteoweb/Remove-Footer-Links)
-[![Coverage Status](https://coveralls.io/repos/github/niteoweb/Remove-Footer-Links/badge.svg)](https://coveralls.io/github/niteoweb/Remove-Footer-Links)
+[![Build Status](https://travis-ci.org/niteoweb/Hide-Footer-Links.svg?branch=master)](https://travis-ci.org/niteoweb/Hide-Footer-Links)
+[![Coverage Status](https://coveralls.io/repos/github/niteoweb/Hide-Footer-Links/badge.svg)](https://coveralls.io/github/niteoweb/Hide-Footer-Links)
 ## Info
 
-Remove Footer Links will try to remove all the footer links and copyright info from your theme.
+Hide Footer Links will try to hide all footer links and copyright info from
+your theme. Hidden links do not pass link juice and can't be seen by
+visitors or bots.
 
 ## Description
 
-Remove Footer Links searches your theme for copyright info that you specified
-and removes it from your footer. This plugin will create a child theme that you
-have to activate in Themes menu.
-
-More info on <a href="http://blog.easyblognetworks.com/2015/free-remove-footer-linkx-plugin/">EBN blog</a>.
+Hide Footer Links tries to hide copyright portion of the footer. It will search
+your theme for copyright info and hide it. If it fails, you have the option
+to specify a CSS selector that can will be hidden.
 
 ## Plugin Features
-* Feature 1
-* Feature 2
-* Feature 3
+* Looks for copyright info and hides it
+* Offers an options to hide an arbitrary element with a CSS selector
+* Has WordPress Customizer support
 
-## Installation
+## Installation & Usage
 
-1. Upload 'remove-footer-links' directory to the '/wp-content/plugins/' directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Go to **Tools** menu and then **Footer Links** to configure
+1. Upload 'hide-footer-links' directory to the '/wp-content/plugins/' directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Go to **Customizer** menu and then select **Footprint Settings**.
+4. Select **Enable hiding**.
+5. If your theme wasn't recognized enter a custom CSS selector.
+6. Click Save & Publish.
+
