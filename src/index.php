@@ -69,7 +69,6 @@ class FooterLinks
         'olsen-light' => array('#footer > div p.tagline', false),
         'omega' => array('footer .credit', true),
         'onepress' => array('#colophon .site-info .container', false),
-        'omega' => array('footer .credit', true),
         'origami' => array('#footer > div.designed', false),
         'padhang' => array('#colophon > div > div.powered', false),
         'parament' => array('#site-generator', false),
@@ -132,7 +131,7 @@ class FooterLinks
             'hfl_settings_section',
             array(
                 'title' => __('Footprint Settings', 'hide-footer-links'),
-                'description' => __('Enables hiding of footer copyright info by searching your theme or giving you an option to specify a custom CSS selector.', 'hide-footer-links');
+                'description' => __('Enables hiding of footer copyright info by searching your theme or giving you an option to specify a custom CSS selector.', 'hide-footer-links'),
                 'priority' => 430,
             )
         );
@@ -250,3 +249,4 @@ class FooterLinks
 if (defined('ABSPATH')) {
     new FooterLinks;
 }
+

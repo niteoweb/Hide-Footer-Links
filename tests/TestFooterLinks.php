@@ -70,11 +70,13 @@ class TestFooterLinks extends TestCase
 
     public function test_customizer()
     {
+        \WP_Mock::wpPassthruFunction('__');
         $wp_customize = \Mockery::mock();
         $wp_customize->shouldReceive('add_section')->withArgs([
             "hfl_settings_section",
             [
                 "title"=>"Footprint Settings",
+                "description"=>"Enables hiding of footer copyright info by searching your theme or giving you an option to specify a custom CSS selector.",
                 "priority"=>430,
             ]
         ]);
