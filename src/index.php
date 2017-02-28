@@ -5,7 +5,7 @@ namespace Niteoweb\HideFooterLinks;
 /**
  * Plugin Name: Hide Footer Links
  * Description: Hide Footer Links will try to remove site info and copyright info from your footer.
- * Version:     1.0.0
+ * Version:     1.0.1
  * Runtime:     5.3+
  * Author:      Easy Blog Networks
  * Author URI:  www.easyblognetworks.com
@@ -104,7 +104,7 @@ class FooterLinks
     public function __construct()
     {
         add_action('generate_rewrite_rules', array(&$this, 'generateRewriteRules'));
-        add_action('wp_admin', array(&$this, 'wpAdminInit'));
+        add_action('init', array(&$this, 'wpAdminInit'));
     }
 
     public function wpAdminInit()
@@ -202,7 +202,7 @@ class FooterLinks
 
     public function customizeCSS()
     {
-        $opts = get_option('hfl_options');
+        $opts = get_option('hfl_options', array('hide-enabled' => true));
         $hide = $opts['hide-enabled'];
         $use_important = '';
         $theme_stylesheet = wp_get_theme()->get_template();

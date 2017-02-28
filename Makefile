@@ -1,9 +1,7 @@
-VERSION := 1.0.0
-PLUGINSLUG := hidefooterlinks
+VERSION := 1.0.1
+PLUGINSLUG := hide-footer-links
 MAINFILE := index.php
 SRCPATH := $(shell pwd)/src
-SVNUSER := niteoweb
-
 SVNUSER := niteoweb
 
 lint:

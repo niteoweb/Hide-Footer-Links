@@ -21,7 +21,7 @@ class TestFooterLinks extends TestCase
         $plugin = new FooterLinks;
 
         \WP_Mock::expectActionAdded('generate_rewrite_rules', array($plugin, 'generateRewriteRules'));
-        \WP_Mock::expectActionAdded('wp_admin', array($plugin, 'wpAdminInit'));
+        \WP_Mock::expectActionAdded('init', array($plugin, 'wpAdminInit'));
         \WP_Mock::expectActionAdded('customize_register', array($plugin, 'customizeRegister'));
         \WP_Mock::expectActionAdded('wp_head', array($plugin, 'customizeCSS'));
 
