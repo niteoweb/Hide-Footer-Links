@@ -1,4 +1,4 @@
-VERSION := 1.0.1
+VERSION := 1.0.2
 PLUGINSLUG := hide-footer-links
 MAINFILE := index.php
 SRCPATH := $(shell pwd)/src

@@ -5,7 +5,7 @@ namespace Niteoweb\HideFooterLinks;
 /**
  * Plugin Name: Hide Footer Links
  * Description: Hide Footer Links will try to remove site info and copyright info from your footer.
- * Version:     1.0.1
+ * Version:     1.0.2
  * Runtime:     5.3+
  * Author:      Easy Blog Networks
  * Author URI:  www.easyblognetworks.com
@@ -96,6 +96,7 @@ class FooterLinks
         'twentysixteen' => array('.site-info', false),
         'twentyten' => array('#colophon', false),
         'twentythirteen' => array('#colophon > div.site-info', false),
+        'twentyseventeen' => array('#colophon > div > div > a', false),
         'twentytwelve' => array('#colophon', false),
         'vega' => array('div.footer .copyright', false),
         'unite' => array('#colophon > div > div > div', false),
