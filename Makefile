@@ -1,7 +1,8 @@
-VERSION := 1.0.2
+VERSION := 1.0.3
 PLUGINSLUG := hide-footer-links
 MAINFILE := index.php
 SRCPATH := $(shell pwd)/src
+ASSPATH := $(shell pwd)/assets
 SVNUSER := niteoweb
 
 lint:
@@ -22,8 +23,11 @@ deploy:
 	@rm -fr /tmp/$(PLUGINSLUG)/
 	svn co http://plugins.svn.wordpress.org/$(PLUGINSLUG)/ /tmp/$(PLUGINSLUG)
 	cp -ar $(SRCPATH)/* /tmp/$(PLUGINSLUG)/trunk/
+	cp -ar $(ASSPATH)/* /tmp/$(PLUGINSLUG)/assets/
 	cd /tmp/$(PLUGINSLUG)/trunk/; svn add * --force
+	cd /tmp/$(PLUGINSLUG)/assets/; svn add * --force
 	cd /tmp/$(PLUGINSLUG)/trunk/; svn commit --username=$(SVNUSER) -m "Updating to $(VERSION)"
+	cd /tmp/$(PLUGINSLUG)/assets/; svn commit --username=$(SVNUSER) -m "Updating to $(VERSION)"
 	cd /tmp/$(PLUGINSLUG)/; svn copy trunk/ tags/$(VERSION)/
 	cd /tmp/$(PLUGINSLUG)/tags/$(VERSION)/; svn commit --username=$(SVNUSER) -m "Tagging version $(VERSION)"
 	rm -fr /tmp/$(PLUGINSLUG)/
