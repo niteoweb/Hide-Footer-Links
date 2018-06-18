@@ -28,3 +28,6 @@ to specify a CSS selector that can will be hidden.
 5. If your theme wasn't recognized enter a custom CSS selector.
 6. Click Save & Publish.
 
+## We're hiring!
+
+At Niteo we regularly contribute back to the Open Source community. If you do too, we'd like to invite you to [join our team](https://niteo.co/careers)!
